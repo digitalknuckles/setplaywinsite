@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Define background images for sections
   const backgrounds = [
-    "setplaywin_Card-01.png",
+    
     "setplaywin_Card0-01.png",
-    "setplaywin_Card1-01.png",
-    "setplaywin_Card2-01.png",
-    "setplaywin_Card3-01.png",
     "setplaywin_Card4-01.png",
+    "setplaywin_Card3-01.png",
+    "setplaywin_Card2-01.png",
+    "setplaywin_Card-01.png",
+    "setplaywin_Card5-01.png",
   ];
 
   /**
