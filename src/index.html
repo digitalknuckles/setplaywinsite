@@ -4,19 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SetPlayWinApp</title>
+  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="public/favicon.ico" type="image/x-icon">
+  <!-- Google Font for improved UI -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <img src="react-logo-xs.png" alt="React logo" style="width: 50px; margin-right: 10px;">
-    <div>
-      <h1>SetPlayWinApp</h1>
-      <p>Your Hub for Games, Web3, and Community</p>
+  <header class="app-header">
+    <div class="logo-section">
+      <img src="public/react-logo-xs.png" alt="React logo" class="logo">
+      <div>
+        <h1>SetPlayWinApp</h1>
+        <p>Your Hub for Games, Web3, and Community</p>
+      </div>
     </div>
   </header>
 
-  <div id="tabs">
-    <menu>
+  <main id="tabs">
+    <menu class="tab-buttons">
       <button class="active" data-tab="0">Overview</button>
       <button data-tab="1">Key Features</button>
       <button data-tab="2">Core Projects</button>
@@ -25,14 +32,14 @@
     </menu>
 
     <div id="tab-content">
-      <div class="tab-section" id="section-0">
+      <div class="tab-section" id="section-0" style="background-image: url('public/setplaywin_Card0-01.png'); display: none;">
         <h2>Overview</h2>
         <ul>
           <li>Welcome to SetPlayWinApp, the platform that brings together FunFart Games, DigitalKnuckles, and LazerPixel Dev.</li>
           <li>Explore games, NFTs, tokens, and community utilities in one place!</li>
         </ul>
       </div>
-      <div class="tab-section" id="section-1" style="display: none;">
+      <div class="tab-section" id="section-1" style="background-image: url('public/setplaywin_Card4-01.png'); display: none;">
         <h2>Key Features</h2>
         <ul>
           <li>Interactive Gaming Hub: Play and discover new games, track progress, and compete with others.</li>
@@ -40,7 +47,7 @@
           <li>Community-Driven Platform: Connect with enthusiasts, join events, and contribute to projects.</li>
         </ul>
       </div>
-      <div class="tab-section" id="section-2" style="display: none;">
+      <div class="tab-section" id="section-2" style="background-image: url('public/setplaywin_Card3-01.png'); display: none;">
         <h2>Core Projects</h2>
         <ul>
           <li>FunFart Games: Quirky and innovative games like SneakyPoot’s Adventures and Toothless Zoo Tycoon.</li>
@@ -48,7 +55,7 @@
           <li>LazerPixel Dev: Experimental projects, tutorials, and tools for game developers.</li>
         </ul>
       </div>
-      <div class="tab-section" id="section-3" style="display: none;">
+      <div class="tab-section" id="section-3" style="background-image: url('public/setplaywin_Card2-01.png'); display: none;">
         <h2>Roadmap</h2>
         <ul>
           <li>Phase 1: Launch the gaming hub and NFT marketplace.</li>
@@ -57,7 +64,7 @@
           <li>Phase 4: Launch the SetPlayWin MemeCoin ecosystem.</li>
         </ul>
       </div>
-      <div class="tab-section" id="section-4" style="display: none;">
+      <div class="tab-section" id="section-4" style="background-image: url('public/setplaywin_Card-01.png'); display: none;">
         <h2>Contact</h2>
         <ul>
           <li>Email: setplaywin@gmail.com</li>
@@ -66,7 +73,11 @@
         </ul>
       </div>
     </div>
-  </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 SetPlayWinApp. All rights reserved.</p>
+  </footer>
 
   <script src="index.js"></script>
 </body>

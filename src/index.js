@@ -1,24 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Select all buttons and tab sections
+document.addEventListener("DOMContentLoaded", () => {
+  // Select buttons and tab sections
   const buttons = document.querySelectorAll("menu button");
   const sections = document.querySelectorAll(".tab-section");
 
-  buttons.forEach((button) => {
-    button.addEventListener("click", function () {
-      const tab = button.getAttribute("data-tab");
+  // Define background images for sections
+  const backgrounds = [
+    "public/setplaywin_Card0-01.png",
+    "public/setplaywin_Card1-01.png",
+    "public/setplaywin_Card2-01.png",
+    "public/setplaywin_Card3-01.png",
+    "public/setplaywin_Card4-01.png",
+  ];
 
-      // Update button active class
-      buttons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
-
-      // Show the selected section, hide others
-      sections.forEach((section) => {
-        section.style.display = "none"; // Hide all sections
-      });
-      document.getElementById(`section-${tab}`).style.display = "block"; // Show the active section
+  /**
+   * Activates a specific tab by index
+   * @param {number} tabIndex - Index of the tab to activate
+   */
+  const activateTab = (tabIndex) => {
+    buttons.forEach((button, idx) => {
+      const isActive = idx === tabIndex;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-selected", isActive);
     });
+
+    sections.forEach((section, idx) => {
+      const isActive = idx === tabIndex;
+      section.style.display = isActive ? "block" : "none";
+
+      // Set background image for the active section
+      if (isActive) {
+        section.style.backgroundImage = `url('${backgrounds[idx]}')`;
+        section.style.backgroundSize = "cover";
+        section.style.backgroundPosition = "center";
+        console.log(`Background image applied: ${backgrounds[idx]}`);
+      }
+    });
+  };
+
+  // Add event listeners to buttons
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => activateTab(index));
   });
 
-  // Ensure the first tab is displayed on load
-  sections[0].style.display = "block";
+  // Initialize the first tab on page load
+  activateTab(0);
 });
