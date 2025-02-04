@@ -63,6 +63,10 @@ main {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  min-height: calc(100vh - 160px); /* Adjust based on header & footer height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Tab Navigation */
@@ -108,6 +112,7 @@ menu.tab-buttons button.active {
 .tab-section {
   display: none;
   flex-grow: 1;
+  height: 100%;
   width: 100%;
   padding: 2rem;
   background-size: cover;
