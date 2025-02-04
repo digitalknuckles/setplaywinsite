@@ -9,15 +9,22 @@
   --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  box-sizing: border-box;
 }
 
+html, body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
 header.app-header {
   background: #282c34;
   color: white;
@@ -25,6 +32,7 @@ header.app-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .logo-section {
@@ -39,28 +47,32 @@ header.app-header {
 }
 
 header h1 {
-  margin: 0;
   font-size: 1.8rem;
 }
 
 header p {
-  margin: 0;
   font-size: 1rem;
   color: #ccc;
 }
 
+/* Main Content */
 main {
-  margin: 2rem auto;
-  max-width: 1200px;
-  padding: 0 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-/* Tab Buttons */
+/* Tab Navigation */
 menu.tab-buttons {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  padding: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 menu.tab-buttons button {
@@ -85,47 +97,25 @@ menu.tab-buttons button.active {
   box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-menu.tab-buttons button:focus {
-  outline: 2px solid var(--secondary-color);
+/* Tab Content Sections */
+#tab-content {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Tab Content Sections */
 .tab-section {
   display: none;
+  flex-grow: 1;
+  width: 100%;
   padding: 2rem;
   background-size: cover;
   background-position: center;
-  border-radius: 5px;
   color: white;
   text-shadow: 1px 1px 3px #000;
-  min-height: 300px;
   box-shadow: 0 4px 6px var(--shadow-color);
-}
-
-.tab-section h2 {
-  margin-top: 0;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.tab-section ul {
-  margin: 1rem 0;
-  padding: 0;
-  list-style: none;
-}
-
-.tab-section ul li {
-  margin-bottom: 0.5rem;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.tab-section ul li:before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--secondary-color);
+  min-height: 100vh;
 }
 
 /* Footer */
@@ -135,6 +125,7 @@ footer {
   background: #282c34;
   color: white;
   font-size: 0.9rem;
+  width: 100%;
 }
 
 /* Responsive Design */
