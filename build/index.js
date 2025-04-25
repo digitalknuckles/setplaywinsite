@@ -1,3 +1,13 @@
+// Import React and ReactDOM to render the React app
+import React from 'react';
+import ReactDOM from 'react-dom';
+//import App from './src/App'; // Assuming your App component is in App.js
+
+// Import PrizeGrabEmbed component (you already did this part)
+//import PrizeGrabEmbed from './docs/src/components/PrizeGrabEmbed';
+//import CyberPetsAiTrainerEmbed from './docs/src/components/CyberPetsAiTrainerEmbed';
+
+// Vanilla JavaScript to handle tab functionality
 document.addEventListener("DOMContentLoaded", () => {
   // Select buttons and tab sections
   const buttons = document.querySelectorAll("menu button");
@@ -5,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Define background images for sections
   const backgrounds = [
-    "setplaywin_Card0-01.png",
-    "setplaywin_Card4-01.png",
-    "setplaywin_Card3-01.png",
-    "setplaywin_Card2-01.png",
-    "setplaywin_Card-01.png",
-    "setplaywin_Card5-01.png",
+    ".docs/setplaywin_Card0-01.png",
+    ".docs/setplaywin_Card4-01.png",
+    ".docs/setplaywin_Card3-01.png",
+    ".docs/setplaywin_Card2-01.png",
+    ".docs/setplaywin_Card-01.png",
+    ".docs/setplaywin_Card5-01.png",
   ];
 
   /**
@@ -46,3 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize the first tab on page load
   activateTab(0);
 });
+
+// Render React app into the DOM
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
